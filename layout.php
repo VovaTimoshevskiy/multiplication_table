@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Login</title>
+    <title>#</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -12,7 +12,6 @@
 
   <body class="bg">
     <?php include "navbar.php"?>
-
     
     <?php include "footer.php"?>
   </body>
