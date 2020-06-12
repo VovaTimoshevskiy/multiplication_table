@@ -11,9 +11,10 @@ class PostsController extends Controller {
 	public function index() {
 
 
-        $posts = Post::get();
+		$posts = new Post;
+		$data = $posts->fetchAll();
         
-		View::render("posts",$posts);
+		View::render("posts",$data);
 		
 	}
 
