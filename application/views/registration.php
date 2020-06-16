@@ -6,16 +6,23 @@
                 <h1 class="h3 mb-3 font-weight-normal text-center">
                     Registration</h1>
                 <div class="form-group">
+                    <input type="text" class="form-control"
+                           style="height: 50px;" placeholder="name" name="name">
+                </div>
+                <div class="form-group">
                     <input type="email" class="form-control"
-                           style="height: 50px;" placeholder="Email address">
+                           style="height: 50px;" placeholder="Email address"
+                           name="login">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control"
-                           style="height: 50px;" placeholder="Password">
+                           style="height: 50px;" placeholder="Password"
+                           name="password">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control"
-                           style="height: 50px;" placeholder="Confirm Password">
+                           style="height: 50px;" placeholder="Confirm Password"
+                           name="password_confirm">
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">
                     Sign In

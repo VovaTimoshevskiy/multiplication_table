@@ -7,11 +7,16 @@ use application\core\Model;
 
 class Post extends Model
 {
+    public $id;
+    public $title;
+    public $body;
 
     public function fetchAll()
     {
+        return $this->db->fetchAll('SELECT * FROM Posts');
+    }
 
-        $result = $this->db->fetchAll('SELECT * FROM Posts');
-        return $result;
+    public function save()
+    {
     }
 }
