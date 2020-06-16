@@ -2,6 +2,7 @@
 
 
 use application\core\Router;
+use application\core\Response;
 
 spl_autoload_register(
     function ($class) {
@@ -33,5 +34,6 @@ spl_autoload_register(
     }
 );
 
-$router = new Router();
-$router->run();
+Router::run();
+$response = new Response();
+$response->run();
