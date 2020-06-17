@@ -42,10 +42,24 @@ return $routes = [
         'action'     => 'login',
     ],
 
-
     'profile/logout' => [
         'controller' => 'login',
         'action'     => 'logout',
+    ],
+
+    'edit' => [
+        'controller' => 'edit',
+        'action'     => 'index',
+    ],
+
+    'edit/profile' => [
+        'controller' => 'edit',
+        'action'     => 'edit',
+    ],
+
+    'edit/profile/img' => [
+        'controller' => 'edit',
+        'action'     => 'uploadImg',
     ],
 
 ];

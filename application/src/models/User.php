@@ -33,11 +33,12 @@ class User extends Model
 
 
         if (!empty($res)) {
+            $_SESSION['id'] = $res['id'];
             $_SESSION['name'] = $res['name'];
+            $_SESSION['email'] = $res['email'];
             header("Location: /profile");
         } else {
-             var_dump($_POST['email']);
-            return false;
+            header("Location: /login");
         }
     }
 
@@ -57,8 +58,44 @@ class User extends Model
         $stmt->execute();
     }
 
-    public function addImg()
+    public function getInfo()
     {
+        $id = $_SESSION['id'];
+
+        $sql
+            = "SELECT * FROM Users WHERE id = :id";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(":id", $id, PDO::PARAM_STR);
+        $stmt->execute();
+
+
+        return $res = $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function updateInfo($id, $name, $email, $password)
+    {
+        $sql
+            = "UPDATE Users SET name = '$name ', email ='$email' WHERE id = '$id'";
+
+        if (!empty($password)) {
+            $sql
+                = "UPDATE Users SET  password ='$password' WHERE id = '$id'";
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute();
+        }
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+    }
+
+    public function addImg($id, $file_path)
+    {
+        $sql
+            = "UPDATE Users SET img = '$file_path' WHERE id = '$id'";
+
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
     }
 
 }
