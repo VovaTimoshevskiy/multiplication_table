@@ -19,6 +19,6 @@
     <div class="container">
         <h1 class="display-4">Хотите выйти?</h1>
         <p class="lead">Нажмите кнопку внизу</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Выйти</a>
+        <a class="btn btn-primary btn-lg" href="/profile/logout" role="button">Выйти</a>
     </div>
 </div>

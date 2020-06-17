@@ -3,7 +3,7 @@
 namespace application\models;
 
 use application\core\Model;
-
+use PDO;
 
 class Post extends Model
 {
@@ -13,7 +13,10 @@ class Post extends Model
 
     public function fetchAll()
     {
-        return $this->db->fetchAll('SELECT * FROM Posts');
+        $stmt = $this->db->prepare('SELECT * FROM Posts');
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function save()

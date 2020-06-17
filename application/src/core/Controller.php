@@ -2,7 +2,8 @@
 
 namespace application\core;
 
-abstract class Controller
+class Controller
 {
+    public $model;
 
 }

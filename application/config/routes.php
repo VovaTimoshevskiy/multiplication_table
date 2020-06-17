@@ -8,13 +8,13 @@ return $routes = [
     ],
 
     'registration' => [
-        'controller' => 'auth',
-        'action'     => 'registration',
+        'controller' => 'registration',
+        'action'     => 'index',
     ],
 
     'login' => [
-        'controller' => 'auth',
-        'action'     => 'login',
+        'controller' => 'login',
+        'action'     => 'index',
     ],
 
     'navigation' => [
@@ -30,6 +30,22 @@ return $routes = [
     'posts' => [
         'controller' => 'posts',
         'action'     => 'index',
+    ],
+
+    'profile/registration' => [
+        'controller' => 'registration',
+        'action'     => 'registration',
+    ],
+
+    'profile/login' => [
+        'controller' => 'login',
+        'action'     => 'login',
+    ],
+
+
+    'profile/logout' => [
+        'controller' => 'login',
+        'action'     => 'logout',
     ],
 
 ];

@@ -10,22 +10,47 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="posts">Посты</a>
+                <a class="nav-link" href="<?php
+                if (!empty($_SESSION['name'])) {
+                    echo "posts";
+                } ?>">Посты</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="profile">Профиль</a>
+                <a class="nav-link" href="<?php
+                if (!empty($_SESSION['name'])) {
+                    echo "profile";
+                } ?>">Профиль</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="navigation">Навигация</a>
-            </li>
+            <?php
+            if (!empty($_SESSION['name'])): ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="navigation">Навигация</a>
+                </li>
+            <?php
+            endif; ?>
         </ul>
         <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" href="login">Log</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="registration">Registration</a>
-            </li>
+            <?php
+            if (!empty($_SESSION['name'])): ?>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/profile"><?php
+                        echo $_SESSION['name'] ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/profile/logout">LogOut</a>
+                </li>
+            <?php
+            else: ?>
+                <li class="nav-item">
+                    <a class="nav-link active" href="login">Log</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="registration">Registration</a>
+                </li>
+            <?php
+            endif; ?>
+
         </ul>
     </div>
 </nav>

@@ -33,6 +33,7 @@ spl_autoload_register(
         }
     }
 );
+session_start();
 
 Router::run();
 $response = new Response();

@@ -2,16 +2,16 @@
     <div class="row justify-content-center align-items-center"
          style="height:100vh">
         <div class="col-4">
-            <form>
+            <form method="post" action="profile/login">
                 <h1 class="h3 mb-3 font-weight-normal text-center">Please sign
                     in</h1>
                 <div class="form-group">
                     <input type="email" class="form-control"
-                           style="height: 50px;" placeholder="Email address">
+                           style="height: 50px;" placeholder="Email address" name="email">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control"
-                           style="height: 50px;" placeholder="Password">
+                           style="height: 50px;" placeholder="Password" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">
                     Sign In
